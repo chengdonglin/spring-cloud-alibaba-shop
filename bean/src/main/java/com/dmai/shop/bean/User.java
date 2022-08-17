@@ -42,6 +42,12 @@ public class User implements Serializable {
     private String password;
 
     /**
+     * 手机号码
+     */
+    @TableField("t_phone")
+    private String phone;
+
+    /**
      * 地址
      */
     @TableField("t_address")
