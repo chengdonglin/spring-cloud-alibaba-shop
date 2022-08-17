@@ -11,5 +11,12 @@
 
     <artifactId>bean</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.dmai.shop</groupId>
+            <artifactId>utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
