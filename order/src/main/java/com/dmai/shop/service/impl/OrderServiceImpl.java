@@ -20,6 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Random;
 
 /**
  * <p>
@@ -101,7 +103,12 @@ public class OrderServiceImpl implements OrderService {
      * @return
      */
     private String  getServiceUrl(String serviceName) {
-        ServiceInstance serviceInstance = discoveryClient.getInstances(serviceName).get(0);
-        return serviceInstance.getHost() + ":" + serviceInstance.getPort();
+        // ServiceInstance serviceInstance = discoveryClient.getInstances(serviceName).get(0);
+        List<ServiceInstance> instances = discoveryClient.getInstances(serviceName);
+        int index = new Random().nextInt(instances.size());
+        ServiceInstance serviceInstance = instances.get(index);
+        String url = serviceInstance.getHost() + ":" + serviceInstance.getPort();
+        log.info("负载均衡之后的服务地址为: {}",url);
+        return url;
     }
 }
