@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class OrderController {
     @Autowired
-    @Qualifier(value = "orderServiceV2")
+    @Qualifier(value = "orderServiceV3")
     private OrderService orderService;
 
     @PostMapping(value = "submit_order")

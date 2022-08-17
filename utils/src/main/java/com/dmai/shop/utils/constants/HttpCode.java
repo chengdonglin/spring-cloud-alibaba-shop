@@ -18,4 +18,9 @@ public class HttpCode {
      * 错误状态码
      */
     public static final int FAILURE = 500;
+
+    /**
+     * 服务容错
+     */
+    public static final int BLOCK = 1001;
 }

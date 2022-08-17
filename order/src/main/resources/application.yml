@@ -27,6 +27,11 @@ spring:
         port: 9999 # 指定和 sentinel 控制台交互的端口，任意指定一个未使用的端口即可
         dashboard: 10.32.1.100:8888 # sentinel 控制太服务地址
 
+# 开启 Feign 对 sentinel的支持
+feign:
+  sentinel:
+    enabled: true
+
 mybatis-plus:
   global-config:
     db-config:
