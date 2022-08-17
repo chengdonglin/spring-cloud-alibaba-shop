@@ -17,7 +17,10 @@ spring:
       charset: UTF-8
       force: true
 
-
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.32.1.100:8848
 
 mybatis-plus:
   global-config:
