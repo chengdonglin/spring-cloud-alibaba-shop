@@ -6,6 +6,7 @@ import com.dmai.shop.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,5 +31,11 @@ public class OrderController {
         log.info("提交订单传递参数: {}", JSONObject.toJSONString(orderParams));
         orderService.saveOrder(orderParams);
         return "success";
+    }
+
+    @GetMapping(value = "/test_sentinel")
+    public String testSentinel(){
+        log.info("测试Sentinel");
+        return "sentinel";
     }
 }

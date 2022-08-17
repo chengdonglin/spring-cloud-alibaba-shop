@@ -22,6 +22,11 @@ spring:
       discovery:
         server-addr: 10.32.1.100:8848
 
+    sentinel:
+      transport:
+        port: 9999 # 指定和 sentinel 控制台交互的端口，任意指定一个未使用的端口即可
+        dashboard: 10.32.1.100:8888 # sentinel 控制太服务地址
+
 mybatis-plus:
   global-config:
     db-config:
