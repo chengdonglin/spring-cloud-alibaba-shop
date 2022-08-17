@@ -21,6 +21,7 @@
         <module>utils</module>
         <module>producr</module>
         <module>user</module>
+        <module>feign-api</module>
     </modules>
 
     <properties>
@@ -65,6 +66,7 @@
                 <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
                 <version>${spring-cloud-alibaba.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>

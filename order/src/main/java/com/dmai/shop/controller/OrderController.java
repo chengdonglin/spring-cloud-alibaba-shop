@@ -5,6 +5,7 @@ import com.dmai.shop.req.OrderParams;
 import com.dmai.shop.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class OrderController {
     @Autowired
+    @Qualifier(value = "orderServiceV2")
     private OrderService orderService;
 
     @PostMapping(value = "submit_order")
